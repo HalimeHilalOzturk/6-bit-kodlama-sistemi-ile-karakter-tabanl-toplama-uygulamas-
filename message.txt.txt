@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+int main(void)
+{
+    char c1, c2;
+    int n1, n2; 
+    int toplam;
+
+    printf("Karakter tabanli toplama programi (max 9 sonucu)\n");
+    printf("Iki rakam karakteri girin (ornegin: 4 5): ");
+
+  
+    if (scanf("%c %c", &c1, &c2) != 2) {
+        printf("HATA: Girdi alinamadi!\n");
+        return 1;
+    }
+
+    
+    if (c1 < '0' || c1 > '9' || c2 < '0' || c2 > '9') {
+        printf("HATA: Gecersiz karakter girdiniz! (Sadece rakam girin)\n");
+        return 1;
+    }
+
+   
+    n1 = c1 - '0';
+    n2 = c2 - '0';
+
+    
+    toplam = n1 + n2;
+
+    
+    if (toplam > 9) {
+        printf("HATA: Toplam 9'dan buyuk! (%d)\n", toplam);
+        return 1;
+    }
+
+
+    printf("Sayisal sonuc: %d\n", toplam);
+    printf("Karakter sonucu: %c\n", toplam + '0');
+
+    return 0;
+}
